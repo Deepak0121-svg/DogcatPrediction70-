@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+	<style>/* General Styles */
+body {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50vh;
+    text-align: center;
+}
+
+/* Container for Content */
+h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #444444;
+}
+
+/* Image Styles */
+img {
+    max-width: 20%;
+    height: 100vh;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin-bottom: 20px;
+}
+
+/* Link Styles */
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    background-color: #007bff;
+    color: #ffffff;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover Effect */
+a:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    img {
+        max-width: 90%;
+    }
+
+    a {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+	</style>
+</head>
+<body>
+    <h1>Prediction: {{ prediction }}</h1>
+    <img src="{{ url_for('static', filename=image_path.split('/')[-1]) }}" alt="Uploaded Image">
+    <br>
+    <a href="{{ url_for('index') }}">Upload another image</a>
+</body>
+</html>
